@@ -3,9 +3,10 @@ import { getDictionary } from "@/lib/i18n/get-dictionary";
 export default async function HomePage({
   params,
 }: {
-  params: { locale: "en" | "ar" };
+  params: Promise<{ locale: "en" | "ar" }>;
 }) {
-  const dict = await getDictionary(params.locale);
+  const { locale } = await params;
+  const dict = await getDictionary(locale);
 
   return (
     <main>
@@ -15,12 +16,15 @@ export default async function HomePage({
   );
 }
 
+// Next.js automatically injects it into <head> for that route  FOR SEO
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: "en" | "ar" };
+  params: Promise<{ locale: "en" | "ar" }>;
 }) {
-  const dict = await getDictionary(params.locale);
+  const { locale } = await params;
+  const dict = await getDictionary(locale);
+
   return {
     title: dict.home.title,
     description: dict.home.subtitle,

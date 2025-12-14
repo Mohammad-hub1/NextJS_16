@@ -1,5 +1,13 @@
-import { Locale } from "./locales";
+import en from "@/lib/i18n/dictionaries/en.json";
+import ar from "@/lib/i18n/dictionaries/ar.json";
 
-export async function getDictionary(locale: Locale) {
-  return (await import(`./dictionaries/${locale}.json`)).default;
+export async function getDictionary(locale: string) {
+  switch (locale) {
+    case "en":
+      return en;
+    case "ar":
+      return ar;
+    default:
+      return en;
+  }
 }

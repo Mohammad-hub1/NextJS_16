@@ -15,16 +15,19 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  if (!locales.includes(params.locale as any)) {
+  const paramsWait = await params;
+  const paramsLocale = paramsWait.locale;
+
+  if (!locales.includes(paramsLocale as any)) {
     notFound();
   }
+  const dict = await getDictionary(paramsLocale as any);
 
-  const dict = await getDictionary(params.locale as any);
-
+  console.log(dict, "dictdict");
   return (
-    <html lang={params.locale} dir={params.locale === "ar" ? "rtl" : "ltr"}>
+    <html lang={paramsLocale} dir={paramsLocale === "ar" ? "rtl" : "ltr"}>
       <body>
-        {/* Example: pass dict via context */}
+        {/* Example: pass dict via context we will apply  it later */}
         {children}
       </body>
     </html>
