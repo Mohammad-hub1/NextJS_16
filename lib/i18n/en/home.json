@@ -1,0 +1,10 @@
+{
+  "home": {
+    "title": "Learn Smarter",
+    "subtitle": "High quality courses"
+  },
+  "courses": {
+    "title": "Courses",
+    "empty": "No courses available"
+  }
+}

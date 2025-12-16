@@ -4,9 +4,8 @@ export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-import "@/app/globals.css";
-import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { notFound } from "next/navigation";
+import { getCoursesDictionary } from "@/lib/i18n/get-dictionary";
 
 export default async function LocaleLayout({
   children,
@@ -21,9 +20,8 @@ export default async function LocaleLayout({
   if (!locales.includes(paramsLocale as any)) {
     notFound();
   }
-  const dict = await getDictionary(paramsLocale as any);
+  const dict = await getCoursesDictionary(paramsLocale as any);
 
-  console.log(dict, "dictdict");
   return (
     <html lang={paramsLocale} dir={paramsLocale === "ar" ? "rtl" : "ltr"}>
       <body>

@@ -1,13 +1,13 @@
-import en from "@/lib/i18n/dictionaries/en.json";
-import ar from "@/lib/i18n/dictionaries/ar.json";
 
-export async function getDictionary(locale: string) {
-  switch (locale) {
-    case "en":
-      return en;
-    case "ar":
-      return ar;
-    default:
-      return en;
-  }
+
+export async function getCommonDictionary(locale: string) {
+  return import(`./${locale}/common.json`).then(m => m.default);
+}
+
+export async function getHomeDictionary(locale: string) {
+  return import(`./${locale}/home.json`).then(m => m.default);
+}
+
+export async function getCoursesDictionary(locale: string) {
+  return import(`./${locale}/courses.json`).then(m => m.default);
 }
