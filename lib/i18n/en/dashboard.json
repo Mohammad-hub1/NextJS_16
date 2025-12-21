@@ -1,0 +1,20 @@
+{
+    "title": "Dashboard",
+    "subtitle": "Welcome back, here’s what’s happening today.",
+    "stats": {
+        "totalUsers": "Total Users",
+        "activeSessions": "Active Sessions",
+        "revenue": "Revenue",
+        "errors": "Errors"
+    },
+    "recentActivity": {
+        "title": "Recent Activity",
+        "empty": "No recent activity yet."
+    },
+    "quickActions": {
+        "title": "Quick Actions",
+        "users": "View users",
+        "settings": "Manage settings",
+        "reports": "View reports"
+    }
+}

@@ -17,6 +17,9 @@
   --muted: 210 40% 96%;
   --muted-foreground: 215.4 16.3% 46.9%;
 
+  --dangerous: 0 84% 53%;
+  --dangerous-foreground: 210 40% 98%;
+
   --border: 214.3 31.8% 91.4%;
   --radius: 0.75rem;
 }
@@ -37,6 +40,8 @@
 
   --muted: 217 32% 17%;
   --muted-foreground: 215 20% 65%;
+  --dangerous: 0 84% 53%;
+  --dangerous-foreground: 210 40% 98%;
 
   --border: 217 32% 17%;
 }
